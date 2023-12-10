@@ -18,9 +18,7 @@ export const useChats = (initialMessages: ChatMessage[]): UseChatsOutput => {
 
   const [messages, setMessages] = useState<ChatMessage[]>(initialMessages);
 
-  const sendMessage = async ({
-    message,
-  }: Record<'message', string>): Promise<void> => {
+  const sendMessage = async ({ message }: Record<'message', string>): Promise<void> => {
     try {
       const nextMessage = await fetch('/api/messages', {
         method: 'POST',

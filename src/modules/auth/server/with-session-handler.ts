@@ -16,15 +16,12 @@ export interface NextApiHandlerOptions<P extends Record<string, string>> {
 }
 
 export type WrappedHandler = <P extends Record<string, string>>(
-  options: NextApiHandlerOptions<P>
+  options: NextApiHandlerOptions<P>,
 ) => Promise<NextResponse>;
 
 export const withSessionHandler =
   <P extends Record<string, string>>(handler: WrappedHandler) =>
-  async (
-    req: NextRequest,
-    context?: NextRequestContext<P>
-  ): Promise<NextResponse> => {
+  async (req: NextRequest, context?: NextRequestContext<P>): Promise<NextResponse> => {
     try {
       const session = await auth();
       const currentUser = await getUserByEmail(session?.user?.email ?? '');

@@ -19,9 +19,7 @@ export const useCreateChatCategory = ({
   const { openModal, closeModal } = useModals();
   const { notify } = useToasts();
 
-  const createChatCategory = async (
-    data: AddCategoryFormData
-  ): Promise<void> => {
+  const createChatCategory = async (data: AddCategoryFormData): Promise<void> => {
     const {
       name,
       color: { value: color },

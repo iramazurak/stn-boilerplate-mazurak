@@ -2,14 +2,11 @@ import NextAuth from 'next-auth';
 import { User } from '@prisma/client';
 import * as argon from 'argon2';
 import Credentials from 'next-auth/providers/credentials';
+import { createUser, getUserByEmail } from '@/lib/api/db';
 import { authConfig } from './config';
 import { AuthCredentials } from './types';
-import { createUser, getUserByEmail } from '@/lib/api/db';
 
-const login = async (
-  email: string,
-  password: string
-): Promise<Omit<User, 'password'> | null> => {
+const login = async (email: string, password: string): Promise<Omit<User, 'password'> | null> => {
   const user = await getUserByEmail(email);
 
   if (!user) return null;
@@ -27,7 +24,7 @@ const login = async (
 
 const register = async (
   email: string,
-  password: string
+  password: string,
 ): Promise<Omit<User, 'password'> | null> => {
   const passwordHash = await argon.hash(password, {
     secret: Buffer.from(process.env.AUTH_SECRET ?? ''),

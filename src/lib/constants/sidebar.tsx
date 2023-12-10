@@ -1,9 +1,4 @@
-import {
-  AnnouncementIcon,
-  BarcodeIcon,
-  HomeIcon,
-  QuizIcon,
-} from '@stn-ui/icons';
+import { AnnouncementIcon, BarcodeIcon, HomeIcon, QuizIcon } from '@stn-ui/icons';
 import { NavigationItem } from '@stn-ui/navigation';
 
 export const SIDEBAR_NAVIGATION: NavigationItem[] = [

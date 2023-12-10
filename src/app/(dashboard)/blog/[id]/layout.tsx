@@ -4,16 +4,11 @@ import Link from 'next/link';
 import { ArticleLayout } from '@stn-ui/layout';
 import { getPostById } from '@/lib/api/blog';
 
-const Layout: NextPage<
-  PropsWithChildren & { params: { id: string } }
-> = async ({ children, params }) => {
-  const {
-    title,
-    description,
-    author,
-    tag = 'Default',
-    date,
-  } = await getPostById(params.id);
+const Layout: NextPage<PropsWithChildren & { params: { id: string } }> = async ({
+  children,
+  params,
+}) => {
+  const { title, description, author, tag = 'Default', date } = await getPostById(params.id);
 
   return (
     <ArticleLayout

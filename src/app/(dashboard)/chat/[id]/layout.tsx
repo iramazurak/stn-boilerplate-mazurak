@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata, NextPage } from 'next';
-import { ChatLayout } from '@stn-ui/layout';
 import { headers } from 'next/headers';
+import { ChatLayout } from '@stn-ui/layout';
 
 interface LayoutProps {
   children: React.ReactNode;

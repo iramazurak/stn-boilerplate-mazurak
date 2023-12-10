@@ -13,9 +13,7 @@ export const useAuthorize = (authType: AuthorizeData['type']): UseAuthorize => {
   const { notify } = useToasts();
   const router = useRouter();
 
-  const handleFormSubmit = async (
-    data: AuthorizeData['data']
-  ): Promise<void> => {
+  const handleFormSubmit = async (data: AuthorizeData['data']): Promise<void> => {
     const code = await authorizeAction({
       type: authType,
       data,

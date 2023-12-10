@@ -18,7 +18,7 @@ export const POST = withSessionHandler(async ({ req, currentUser }) => {
           'Act like my best friend, with jokes advices and support. I will do the same for you. We can talk about anything. Be yourself.',
       },
       currentUser.id,
-      category?.id
+      category?.id,
     );
 
     return NextResponse.json(chat, { status: 200 });

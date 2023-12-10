@@ -3,10 +3,7 @@
 import { signIn } from '../client';
 import { AuthorizeData } from '../types';
 
-export const authorizeAction = async ({
-  data,
-  type,
-}: AuthorizeData): Promise<string | null> => {
+export const authorizeAction = async ({ data, type }: AuthorizeData): Promise<string | null> => {
   try {
     await signIn('credentials', {
       type,

@@ -12,17 +12,11 @@ export const ChatList: FC = async () => {
   const chatsPromise = await fetch(`${process.env.APP_HOST}/api/chats`, {
     headers: headers(),
   }).then((res) => res.json() ?? []);
-  const categoriesPromise = await fetch(
-    `${process.env.APP_HOST}/api/categories`,
-    {
-      headers: headers(),
-    }
-  ).then((res) => res.json());
+  const categoriesPromise = await fetch(`${process.env.APP_HOST}/api/categories`, {
+    headers: headers(),
+  }).then((res) => res.json());
 
-  const [chats, categories] = await Promise.all([
-    chatsPromise,
-    categoriesPromise,
-  ]);
+  const [chats, categories] = await Promise.all([chatsPromise, categoriesPromise]);
 
   return (
     <>
@@ -71,7 +65,7 @@ export const ChatList: FC = async () => {
                 linkAs={Link}
                 href={`/chat/${id}`}
               />
-            )
+            ),
           )}
         </TBody>
       </Table>

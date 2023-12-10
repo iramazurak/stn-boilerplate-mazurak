@@ -1,6 +1,8 @@
 {
 	"extends": [
-		"@wallwhite/eslint-config-react-ts"
+		"@wallwhite/eslint-config-react-ts",
+		"next",
+		"prettier"
 	],
 	"rules": {
 		"react/jsx-indent": [

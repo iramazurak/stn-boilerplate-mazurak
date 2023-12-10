@@ -10,10 +10,6 @@ export const SidebarUserMenu: FC = () => {
   const { isExpanded } = useSidebarContext();
 
   return session.data ? (
-    <UserMenu
-      isExpanded={isExpanded}
-      email={session.data?.user?.email ?? ''}
-      onLogOut={signOut}
-    />
+    <UserMenu isExpanded={isExpanded} email={session.data?.user?.email ?? ''} onLogOut={signOut} />
   ) : null;
 };

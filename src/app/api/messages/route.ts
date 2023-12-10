@@ -12,7 +12,7 @@ export const POST = withSessionHandler(async ({ req, currentUser }) => {
       role: 'user',
     },
     chat?.id,
-    currentUser.id
+    currentUser.id,
   );
 
   return NextResponse.json(message);

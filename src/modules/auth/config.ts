@@ -12,12 +12,8 @@ export const authConfig: NextAuthConfig = {
       const protectedRoutes = ['/chat'];
       const anonymousRoutes = ['/login', '/register'];
 
-      const isProtectedRoute = protectedRoutes.some((route) =>
-        nextUrl?.pathname.startsWith(route)
-      );
-      const isAnonymousRoute = anonymousRoutes.some((route) =>
-        nextUrl?.pathname.startsWith(route)
-      );
+      const isProtectedRoute = protectedRoutes.some((route) => nextUrl?.pathname.startsWith(route));
+      const isAnonymousRoute = anonymousRoutes.some((route) => nextUrl?.pathname.startsWith(route));
 
       if (isAnonymousRoute) {
         if (isLoggedIn) {

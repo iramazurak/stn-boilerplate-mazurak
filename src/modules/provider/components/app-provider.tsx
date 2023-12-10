@@ -18,9 +18,7 @@ export const AppProvider: FC<PropsWithChildren<Props>> = ({ children }) => (
       <ToastProvider>
         <ModalProvider
           modalComponents={
-            modals as unknown as ComponentProps<
-              typeof ModalProvider
-            >['modalComponents']
+            modals as unknown as ComponentProps<typeof ModalProvider>['modalComponents']
           }
         >
           {children}
