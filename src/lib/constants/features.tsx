@@ -1,4 +1,9 @@
-import { BooksIcon, ChattingIcon, ShieldIcon, UniversityCapIcon } from '@stn-ui/icons';
+import {
+  BooksIcon,
+  ChattingIcon,
+  ShieldIcon,
+  UniversityCapIcon,
+} from '@stn-ui/icons';
 
 export const FEATURES_ITEMS = [
   {

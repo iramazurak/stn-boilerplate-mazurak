@@ -8,7 +8,8 @@ export const metadata: Metadata = {
     absolute: 'PawsitiveAI',
     template: 'PawsitiveAI | %s',
   },
-  description: 'STN - Sweat, Tears, Next.js. Complete guide to building a Next.js app.',
+  description:
+    'STN - Sweat, Tears, Next.js. Complete guide to building a Next.js app.',
 };
 
 interface RootLayout {

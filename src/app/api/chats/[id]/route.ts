@@ -10,7 +10,10 @@ interface Params {
 
 export const dynamic = 'force-dynamic';
 
-export const GET = async (_: NextRequest, { params }: Params): Promise<NextResponse> => {
+export const GET = async (
+  _: NextRequest,
+  { params }: Params
+): Promise<NextResponse> => {
   const chat = await getChatById(params.id, {
     messages: {
       include: {
@@ -24,7 +27,8 @@ export const GET = async (_: NextRequest, { params }: Params): Promise<NextRespo
     },
   });
 
-  if (!chat) return NextResponse.json({ error: 'Chat not found' }, { status: 404 });
+  if (!chat)
+    return NextResponse.json({ error: 'Chat not found' }, { status: 404 });
 
   const { messages = [], ...chatData } = chat;
 

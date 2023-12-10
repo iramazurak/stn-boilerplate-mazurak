@@ -1,7 +1,7 @@
 import React from 'react';
 import { NextPage } from 'next';
 import { Chat } from '@/modules/chat/components';
-import { headers } from "next/headers";
+import { headers } from 'next/headers';
 
 interface Props {
   params: {

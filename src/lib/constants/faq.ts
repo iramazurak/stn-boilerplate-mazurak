@@ -38,7 +38,8 @@ export const FAQ_ITEMS = [
   },
   {
     id: 'how-can-i-implement-this-is-there-any-implementation-guide-for-this',
-    title: 'How can I implement this? Is there any implementation guide for this?',
+    title:
+      'How can I implement this? Is there any implementation guide for this?',
     description:
       'Developers can now integrate AI into their applications and products through our API. Users can expect continuous model improvements and the option to choose dedicated capacity for deeper control over the models. To learn more, please check out the OpenAI documentation.',
   },

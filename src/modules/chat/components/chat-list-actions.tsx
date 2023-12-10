@@ -3,7 +3,7 @@
 import React, { FC } from 'react';
 import { Category } from '@prisma/client';
 import { Button } from '@stn-ui/button';
-import { useCreateChatCategory, useCreateChat } from '../hooks';
+import { useCreateChat, useCreateChatCategory } from '../hooks';
 import styles from './chat-list-actions.module.scss';
 
 interface Props {

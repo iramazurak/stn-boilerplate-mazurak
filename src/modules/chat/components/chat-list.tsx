@@ -4,7 +4,7 @@ import { headers } from 'next/headers';
 import Link from 'next/link';
 import { ChatRow } from '@stn-ui/chat-row';
 import { Heading } from '@stn-ui/heading';
-import { TBody, THead, Table, Td, Tr } from '@stn-ui/table';
+import { Table, TBody, Td, THead, Tr } from '@stn-ui/table';
 import { ChatListActions } from './chat-list-actions';
 import styles from './chat-list.module.scss';
 
@@ -12,11 +12,17 @@ export const ChatList: FC = async () => {
   const chatsPromise = await fetch(`${process.env.APP_HOST}/api/chats`, {
     headers: headers(),
   }).then((res) => res.json() ?? []);
-  const categoriesPromise = await fetch(`${process.env.APP_HOST}/api/categories`, {
-    headers: headers(),
-  }).then((res) => res.json());
+  const categoriesPromise = await fetch(
+    `${process.env.APP_HOST}/api/categories`,
+    {
+      headers: headers(),
+    }
+  ).then((res) => res.json());
 
-  const [chats, categories] = await Promise.all([chatsPromise, categoriesPromise]);
+  const [chats, categories] = await Promise.all([
+    chatsPromise,
+    categoriesPromise,
+  ]);
 
   return (
     <>
@@ -65,7 +71,7 @@ export const ChatList: FC = async () => {
                 linkAs={Link}
                 href={`/chat/${id}`}
               />
-            ),
+            )
           )}
         </TBody>
       </Table>

@@ -9,7 +9,9 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY || '',
 });
 
-const formatMessagesForAi = (messages: Message[]): ChatCompletionMessageParam[] =>
+const formatMessagesForAi = (
+  messages: Message[]
+): ChatCompletionMessageParam[] =>
   messages.map((message) => ({
     role: message.role,
     content: message.content,
@@ -34,7 +36,7 @@ export const POST = async (req: NextRequest): Promise<NextResponse> => {
 
   const message = await createMessage(
     { role, content } as Pick<Message, 'content' | 'role'>,
-    chat?.id,
+    chat?.id
   );
 
   return NextResponse.json(message);

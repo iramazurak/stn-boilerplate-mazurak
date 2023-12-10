@@ -12,7 +12,8 @@ export const metadata: Metadata = {
     absolute: 'PawsitiveAI',
     template: 'PawsitiveAI | %s',
   },
-  description: 'STN - Sweat, Tears, Next.js. Complete guide to building a Next.js app.',
+  description:
+    'STN - Sweat, Tears, Next.js. Complete guide to building a Next.js app.',
 };
 
 interface RootLayout {
@@ -23,13 +24,13 @@ const RootLayout: FC<RootLayout> = async ({ children }) => {
   const session = await auth();
 
   return (
-      <html lang="en">
+    <html lang="en">
       <body className={inter.className} suppressHydrationWarning>
-      <div id="root">
-        <AppProvider session={session}>{children}</AppProvider>
-      </div>
+        <div id="root">
+          <AppProvider session={session}>{children}</AppProvider>
+        </div>
       </body>
-      </html>
+    </html>
   );
 };
 
